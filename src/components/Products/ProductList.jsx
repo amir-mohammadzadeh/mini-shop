@@ -7,10 +7,10 @@ import Loadding from '../Loadder/Loadding'
 const ProductList = () => {
     const { productsList, filters, categoryList } = useContext(AppContext)
     const [productRecords, setProductRecords] = useState([...productsList])
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setProductRecords([...productsList])
-    },[productsList])
+    }, [productsList])
 
     useEffect(() => {
         filters.category != ''
@@ -56,19 +56,18 @@ const ProductList = () => {
 
     return (
         <>
-            <Filter  />
+            {productRecords.length > 0 && <Filter />}
+
             {filters.search != '' && <Header value={filters.search} />}
-            
+
             <main className='container mx-auto px-8'>
-
-                {productRecords.length == 0 && <Loadding /> }
-
                 <div className=" grid gap-3 md:gap-4 lg:gap-8 mt-8 justify-center grid-cols-auto-17 sm1:grid-cols-auto-14 lg:grid-cols-auto-17 ">
-                    {productRecords.map(pro =>
+                    {productRecords.length > 0 && productRecords.map(pro =>
                         <ProductCard key={pro.id} {...pro} onAdd={onclick} />
-                    )}
-
+                        )}
                 </div>
+                {productRecords.length == 0 && <Loadding />}
+                
             </main>
         </>
     )
@@ -79,7 +78,7 @@ export default ProductList
 const Header = ({ value }) => {
     return (
         <>
-            <div className="container ps-6 md:ps-8 xl:ms-24 mx-auto">Search resule for "<b> {value} </b>" </div> 
+            <div className="container ps-6 md:ps-8 xl:ms-24 mx-auto">Search resule for "<b> {value} </b>" </div>
         </>
     )
 }

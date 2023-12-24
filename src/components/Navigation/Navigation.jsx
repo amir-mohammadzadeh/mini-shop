@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import SearchBox from '../SearchBox/SearchBox'
 import SideMenu from '../SideMenu/SideMenu'
@@ -8,7 +8,7 @@ import { AppContext } from '../../ContextStateManager'
 
 const Navigation1 = () => {
     const navigate = useNavigate()
-    const {isLogin , userCart} = useContext(AppContext)
+    const {isLogin , userCart , filters} = useContext(AppContext)
     const [openSearchBox, setOpenSearchBox] = useState(false)
     const [openSideMenu, setOpenSideMenu] = useState(false)
     const [openUserMenu, setOpenUserMenu] = useState(false)
@@ -16,6 +16,10 @@ const Navigation1 = () => {
     const goToLogin = ()=>{
         navigate('/login')
     }
+    
+    useEffect(()=>{
+        openSideMenu && setOpenSideMenu(false)
+      },[filters])
     
     return (
         <>

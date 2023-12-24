@@ -21,7 +21,7 @@ const SearchBox = ({ onClose }) => {
     const onChangeHandler = (event) => {
         event.target.value == ''
             ? setResults([])
-            : setResults(productsList.filter(product => product.title.toLowerCase().includes(event.target.value)))
+            : setResults(productsList.filter(product => product.title.toLowerCase().includes(event.target.value.toLowerCase())))
     }
 
     const onSearch = () => {

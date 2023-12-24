@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Category_List from './Category_List';
 
-const NavLinks = ({ position }) => {
+const NavLinks = ({ position , close=null}) => {
 
     const [openCategory, setOpenCategory] = useState(false)
     let container, item, dropdown, icon;
@@ -20,12 +20,15 @@ const NavLinks = ({ position }) => {
         icon = <i className={openCategory ? "bi bi-caret-down-fill text-base self-end duration-200 rotate-180" :
                                             "bi bi-caret-down-fill text-base self-end duration-200 rotate-0"} ></i>
     )
+    const closeSideMenu = ()=>{
+        position == 'sidemenu' && close()
+    }
 
     return (
         <>
             <ul className={container}>
                 <li className={item}>
-                    <NavLink to='/' className='block' >
+                    <NavLink to='/mini-shop/' className='block' onClick={closeSideMenu}>
                         Home
                     </NavLink>
                 </li>
@@ -37,7 +40,7 @@ const NavLinks = ({ position }) => {
                     {openCategory && <Category_List position={position} onClose={() => setOpenCategory(false)} />}
                 </li>
                 <li className={item}>
-                    <NavLink to='/about' className='block'  >
+                    <NavLink to='/about' className='block'  onClick={closeSideMenu} >
                         About
                     </NavLink>
                 </li>

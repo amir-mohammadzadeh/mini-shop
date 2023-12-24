@@ -10,7 +10,7 @@ import ProductDetailes from "./components/ProductDetails/ProductDetailes";
 import ProductList from "./components/Products/ProductList";
 
 export const router = [
-    {path:'/' , element: <HomeMain   /> },
+    {path:'/mini-shop/' , element: <HomeMain   /> },
     {path:'/products/*', element: <ProductList   /> },
     {path:'/login', element: <Login /> },
     {path:'/about', element: <About /> },

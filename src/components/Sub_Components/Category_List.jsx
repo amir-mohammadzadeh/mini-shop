@@ -22,7 +22,7 @@ const Category_List = ({ position, onClose }) => {
 
     const setCategory = (tag) => {
         tag == "All" ? (
-            navigate('/')
+            navigate('/mini-shop/')
         ) : (
             navigate(`/products/?category=${tag}`),
             setFilters({ search:'', sort:'' , category: tag })

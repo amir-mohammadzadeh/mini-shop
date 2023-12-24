@@ -52,13 +52,13 @@ const SideMenu = ({ isLogin, onClose }) => {
         </div>
 
         <div className="cart-button">
-          <Link to='/shopping-cart' >
+          <Link to='/shopping-cart' onClick={closeSideMenu}>
             <i className="bi bi-cart3"></i>
             Shopping Cart
           </Link>
         </div>
 
-        <NavLinks position='sidemenu' />
+        <NavLinks position='sidemenu' close={closeSideMenu} />
 
       </div>
     </div>
