@@ -1,0 +1,26 @@
+.content{
+    background-color: #fafafa;
+    box-shadow: 0 0 5px 1px #bababa85;
+    width: 100%;
+    font-size: 1.5em;
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+}
+.button{
+    background-color: #78c1b627;
+    color: brown;
+    padding-block: 0em .2em ;
+    padding-inline: .3em ;
+    cursor: pointer;
+}
+.rsult{
+    text-align: center;
+    flex-grow: 1;
+    padding: .1em .4em;
+    font-size: .8em;
+}
+
+

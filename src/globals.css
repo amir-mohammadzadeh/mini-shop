@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply text-base lg:text-lg xl:text-2xl m-0 ;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-block: 1rem;
+  }
+  a {
+    background-color: transparent;
+    color: unset;
+    text-decoration: none;
+  }
+
+  .btn{
+    @apply py-1 px-4 border-0 rounded-md mx-4 hover:opacity-80 transition cursor-pointer
+  }
+  i{
+    @apply text-xl md:text-2xl 
+  }
+
+  .open-animation{
+    animation: .4s inOpen forwards;
+  }
+  @keyframes inOpen {
+    0%{
+      transform: translateX(2rem);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0rem);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.filter-content {
+    box-sizing: border-box;
+    border-bottom: 2px solid #b7b7b7;
+    margin: 1rem auto;
+    padding: .5rem 2rem;
+    max-width: 80rem;
+}
+
+.select{
+    position: relative;
+    width: 9rem;
+}
+.select-button {
+    width: 100%;
+    padding-block: .1rem;
+    padding-inline: 1rem .5rem;
+    border: 1px solid #a7a7a7;
+    border-radius: .35rem;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.select-button:hover {
+    transition: .3s;
+    cursor: pointer;
+    background-color: #f6fcfc;
+}
+
+.select-button i {
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.select-button span {
+    flex-grow: 1;
+    text-align: start;
+}
+
+.select-content {
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    background-color: #f8f8f8;
+    border: 1px solid #a7a7a7;
+    border-radius: .35rem;
+    padding: .5rem 0;
+    z-index: 2;
+    animation: .3s openPanel normal;
+}
+
+@keyframes openPanel {
+    from {
+        transform: translateY(-2rem) scale(.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.item {
+    padding: .25rem 1rem;
+}
+.item:nth-child(1){
+    color: #949494;
+}
+.item:hover {
+    transition: .2s;
+    cursor: pointer;
+    background-color: #e5edf3;
+}
+
+
+@media screen and (min-width: 1280px) {
+    .item ,
+    .select-button{
+        font-size: 1.2rem;
+    }
+
+}
+@media screen and (min-width: 1540px) {
+    .filter-content{
+        padding-inline: 10rem;
+    }
+}

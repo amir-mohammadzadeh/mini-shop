@@ -1,0 +1,94 @@
+.SideMenu{
+    background-color: #19283b; /* 19283b  */
+    color: aliceblue;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    box-sizing: border-box;
+    width: 20rem;
+    height: 100%;
+    z-index: 3;
+    padding: 3rem 2rem 1.5rem 2rem;
+    overflow-y: auto;
+}
+.menu-open{
+    animation: .5s openr forwards ;
+}
+.menu-close{
+    animation: .5s close forwards ;
+}
+@keyframes openr {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 0;
+    }
+}
+@keyframes close {
+    0%{
+        right: 0;
+    }
+    100%{
+        right: -100%;
+    }
+}
+
+.sidemenu-content{
+    position: relative;
+}
+
+.SideMenu .close-btn{
+    position: absolute;
+    top: -3rem;
+    font-size: 2rem;
+    color: rgb(255, 175, 175);
+    cursor: pointer;
+}
+
+.SideMenu .login-button{
+    margin-block: 1rem;
+    padding-block: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ffffffc0;
+}
+
+.SideMenu .login-button .s-button{
+    display: block;
+    background-color: rgb(15, 66, 234);
+    width: 95%;
+    padding: .25rem 1rem ;
+    border-radius: .4rem;
+
+}
+
+.SideMenu .cart-button{
+    padding-bottom: 1rem;
+    line-height: 3rem;
+    color: aliceblue;
+    border-bottom: 2px solid #ffffff2e;
+}
+
+.SideMenu .cart-button i{
+    margin-inline-end: .5rem;
+}
+.SideMenu .cart-button a{
+    display: block;
+}
+.SideMenu .user-content{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+.SideMenu .user-content span{
+    flex-grow: 1;
+    text-align: start;
+}
+
+
+@media screen and (max-width: 410px) {
+    .SideMenu{
+        width: 100%;
+    }
+}
